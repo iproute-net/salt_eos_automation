@@ -16,7 +16,7 @@ Salt is the open source version of saltstack open for any developement.
 
 #What ports need to be open for the salt master and salt minions to talk?
 
-UCP/TCP port 4505 and 4506.
+UDP/TCP port 4505 and 4506.
 
 #How is this differnt than Ansible, Chef and Puppet?
 Salt accomplishes the same thing as the other popular configuration management tools ie it will apply configuration, render templates etc.  However, what is extremely unique to salt is that it has a modern ZeroMQ bus between minions and master node(s).  So anything that happens within the salt minion is sent to the salt master as a sort of event.  These events can even be sent externally to logging systems or salt can react to events that happen over the network bus.  The idea is that instead of a human constantly creating playbooks or making changes the system operates autonomously.  Salt like other configuration management systems has 3rd party integration into devices other than networking devices ie VMware, AWS etc.  
