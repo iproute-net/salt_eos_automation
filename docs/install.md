@@ -65,6 +65,29 @@ base_lab_Leaf2
 base_lab_Spine1
 base_lab_Spine2
 ```
+#### basic setup the EOS switches to establich the connectivity between EOS switches and Salt Master
+
+```
+docker exec -it base_lab_Leaf1 Cli 
+# you will be connected to the switch terminal
+# use enabale and switch to privilage mode
+switch> en
+switch#
+switch# conf t
+switch(config)# management api http-commands
+switch(config)# management api http-commands
+switch(config-mgmt-api-http-cmds)# protocol http
+switch(config-mgmt-api-http-cmds)# no shutdown
+switch(config-mgmt-api-http-cmds)# exit
+switch(config)# username arista secret arista privilages 15
+switch(config)# end
+switch# wr
+
+```
+do the same steps for other switches:
+    base_lab_Leaf2
+    base_lab_Spine1
+    base_lab_Spine2
 
 #### Provide a test ping for all minions (salt '*' test.ping)
 ```
