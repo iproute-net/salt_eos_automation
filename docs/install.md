@@ -4,6 +4,12 @@
 `
 docker import cEOS-lab-4.23.2F.tar.xz ceosimage:4.23.2f 
 `
+#### NOTE
+`
+notice that EOS version lower than 4.28 is only worked with cgroups v1, so if you had an issue with that on the lasted linux distribution you can downgrade the cgroups to the V1.
+edit /etc/default/grub and set the value of systemd.unified_cgroup_hierarchy to 0
+    GRUB_CMDLINE_LINUX="systemd.unified_cgroup_hierarchy=0"
+update-grub
 
 #### Create the docker salt container for this lab
 `
