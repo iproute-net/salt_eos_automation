@@ -1,3 +1,5 @@
+Salt comes with an interface to derive information about the underlying system. This is called the [grains] (https://docs.saltproject.io/en/latest/topics/grains/index.html) interface, because it presents salt with grains of information. Grains are collected by salt from the minions for the operating system, domain name, IP address, kernel, OS type, memory, and many other system properties.
+
 Salt [grains](https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.grains.html) are meta data about a salt minion in which you can use to etheir render configs or target devices based off things like different operating systems or ethernet nics.
 
 ## showing grains.
